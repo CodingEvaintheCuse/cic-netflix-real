@@ -16,7 +16,6 @@
          url('../fonts/pier-sans/piersans-regular-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-
 }
 
 @font-face {
@@ -25,7 +24,6 @@
          url('../fonts/pier-sans/piersans-medium-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-
 }
 
 @font-face {
@@ -51,26 +49,48 @@ body{background-color: #141414; font-family: 'pier_sansregular'; color:white; fo
 
 header{display: flex; flex-direction: row; justify-content: flex-start; align-items: center; width: 100%; height: 65px; padding: 0 60px; background-color: transparent; position: fixed; top:0; left: 0;}
 
-header nav a.header-logo .logo { display: block; width: 92px; height: 55px; background: url('../images/netflix-logo.svg') no-repeat center center; background-size: contain; will-change: transform; transition: .25s ease-in-out;}
+header a.header-logo .logo { display: block; width: 92px; height: 55px; background: url('../images/netflix-logo.svg') no-repeat center center; background-size: contain; will-change: transform; transition: .25s ease-in-out;}
 
-header nav a.header-logo .logo:hover{transform: scale(1.2);}
+header ul.nav-links{ display: flex; flex-direction: row; justify-content: flex-start; align-items: center; margin-left: 20px;}
+
+header ul.nav-links li a {color: white; font-size: 14px; padding:0 8px; text-decoration: none;}
+
+header .secondary-links-container{display: flex; flex-direction: row; justify-content: flex-end; margin: 0 0 0 auto;}
+
+header .secondary-links-container ul.secondary-links{display: flex; flex-direction: row; justify-content: flex-start; align-items: center; }
+
+header ul.secondary-links li a {color: white; font-size: 14px; padding: 0 8px; text-decoration: none; text-transform: uppercase;}
+
+header a.header-logo .logo:hover{transform: scale(1.2);}
+
+header .secondary-links-container i.search-icon{margin-right: 10px;}
+
+header .secondary-links-container i.notifications-icon{margin-left: 10px;}
 
 main{width: 100; max-width: 1200px; height: auto; margin: 0 auto;}
 
-.profiles-selection-container{display: flex; flex-direction: column;justify-content: center; align-items: center; width: 100%; min-height: calc(100vh - 65px); margin-top: 65px;}
+.profiles-selection-container{display: flex; flex-direction: column;justify-content: center; align-items: center; width: 100%; min-height: calc(100vh - 65px); }
 
 .profiles-selection-container h1 {font-family: 'pier_sansregular'; font-size: 52px; text-align: center;}
 
-.profiles-selection-row {display: flex; flex-direction: row;  justify-content: center; align-items: center; flex-wrap: wrap;}
+.profiles-selection-row {display: flex; flex-direction: row;  justify-content: center; align-items: center; flex-wrap: wrap;margin: 65px 0;}
 
-.profile-container {display: flex; flex-direction: column; justify-content: flex-start; align-items: center; flex: 1; margin: 0 20px;}
+.profile-container {display: flex; flex-direction: column; justify-content: flex-start; align-items: center; flex: 1; margin: 10px 20px;}
+
+.featured-section{width: 100%; height: 0; padding-bottom: 56.25%; overflow: hidden; position: relative;} /*Hint: for Netflix thumbnails. 16 by 9 is the aspect ratio. 16/9=56.25*/
+
+.featured-section:after{content:''; width: 100%; height: 125px; position: absolute; bottom: 0; left: 0; z-index: 10; background: linear-gradient(to top, #141414, transparent);}
+
+.featured-section video {width: 100%; height: 100%; position: absolute; top: 0; left: 0; z-index: -1;}
 
 .profile-pic {display: block; width: 150px; height: 150px; border: 5px solid #808080; transition: .25s ease-in-out;}
 
-profiles-button {display: flex; width: 250px; border-color: 50px solid white; color: white; transition: .25s ease-in-out; text-align: center; height: 50px; justify-content: center;}
+a.profiles-button {display: flex; min-width: 250px; min-height: 40px;border: 1px solid #808080; transition: .25s ease-in-out; text-align: center; height: 50px; justify-content: center; align-items: center; font-family: 'pier_sansregular'; font-size: 16px; text-transform: uppercase; letter-spacing: 3.5px;} 
 
-.profiles-button:hover{will-change: transform; transition: .25s ease-in-out; color: gray; transform: scale(1.2); border-color: white;}
+a.profiles-button:hover {will-change: transform; transition: .25s ease-in-out; border-color: white; }
 
 .profile-container h3 {text-align: center; font-family: 'pier_sansregular'; font-size: 16px;}
 
 .profile-container:hover .profile-pic{border-color: white;}
+
+
