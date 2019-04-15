@@ -43,7 +43,7 @@
     font-style: normal;
 
 }
-/* Media Queries */
+/* Media Queries */ /*Jeff:I just copied this from your master but didn't get it to work*/
 
 @media screen and (max-width: 1000px) {
     header .nav-actions-container ul.secondary-links{display: none;}
@@ -113,11 +113,41 @@ main{width: 100;
 
 .profile-container {display: flex; flex-direction: column; justify-content: flex-start; align-items: center; flex: 1; margin: 10px 20px;}
 
-.featured-section{width: 100%; height: 0; padding-bottom: 56.25%; overflow: hidden; position: relative;} /*Hint: for Netflix thumbnails. 16 by 9 is the aspect ratio. 16/9=56.25*/
+#featured-selection{width: 100%; height: 0; padding-bottom: 56.25%; overflow: hidden; position: relative; display: flex; width: 100%; height: auto; padding-bottom: 52.25%}/*Hint: for Netflix thumbnails. 16 by 9 is the aspect ratio. 16/9=56.25*/
 
-.featured-section:after{content:''; width: 100%; height: 125px; position: absolute; bottom: 0; left: 0; z-index: 10; background: linear-gradient(to top, #141414, transparent);}
+.featured-selection:after{content:''; width: 100%; height: 125px; position: absolute; bottom: 0; left: 0; z-index: 10; background: linear-gradient(to top, #141414, transparent);}
 
-.featured-section video {width: 100%; height: 100%; position: absolute; top: 0; left: 0; z-index: -1;}
+#featured-selection video {width: 100%; height: auto; position: absolute; top: 0; left: 0; z-index: -1;}
+
+.featured-selection-content{position: relative;}
+
+.play-action.buttons{justify-content: left; align-items: center;}
+
+.featured-action-buttons{display: flex; align-items: center;}
+
+p.planet-text{font-family: 'pier_sansregular'; font-size: 21px; line-height: 1.4; text-shadow: 5px 5px 12px #000;}
+
+
+/** Homepage Styles */
+/* #featured-selection{display: flex; width: 100%; height: auto; padding-bottom: 52.25%; position: relative; overflow: hidden;}
+#featured-selection:after{content: ''; width: 100%; height: 125px; background: linear-gradient(to top, #141414, transparent); position: absolute; bottom: 0; left: 0; z-index: 99;}
+#featured-selection .featured-selection-content{display: flex; flex-direction: column; justify-content: center; align-items: flex-start; width: 100%; height: 100%; position: absolute; top: 0; left: 0; z-index: 100;} */
+/* #featured-selection .featured-actions-container{display: flex; flex-direction: column; justify-content: flex-start; align-items: flex-start; max-width: 40%; margin: 40px 0 0 60px;}
+#featured-selection .featured-action-buttons{display: flex; flex-direction: row; justify-content: flex-start; align-items: center; margin-bottom: 10px;}
+#featured-selection .featured-action-buttons button{display: flex; flex-direction: row; justify-content: center; align-items: center; padding: 10px 35px; background: rgba(0, 0, 0, .35); box-shadow: 0; color: #e6e6e6; font-family: 'pier_sansbold'; font-size: 16px; margin-right: 10px; border-radius: 3px; outline: none; border: none; white-space: nowrap; will-change: transform; transition: .2s ease-in-out;}
+#featured-selection .featured-action-buttons button#play-pause-button span{display: flex; justify-content: center; align-items: center; }
+#featured-selection .featured-action-buttons button#play-pause-button .play-controls{display: none;}
+#featured-selection .featured-action-buttons button#play-pause-button.pause-video .pause-controls{display: flex;}
+#featured-selection .featured-action-buttons button#play-pause-button.pause-video .play-controls{display: none;}
+#featured-selection .featured-action-buttons button#play-pause-button.play-video .pause-controls{display: none;}
+#featured-selection .featured-action-buttons button#play-pause-button.play-video .play-controls{display: flex;}
+#featured-selection .featured-action-buttons button:hover{transform: scale(1.05); transform-origin: center; background: #fff; color: #000; box-shadow: 0 15px 25px 0 rgba(10, 10, 10, .20); cursor: pointer;}
+#featured-selection .featured-action-buttons button i{font-size: 28px; margin-right: 8px;}
+#featured-selection .featured-actions-container p.featured-media-description{font-family: 'pier_sansregular'; font-size: 21px; line-height: 1.4; text-shadow: 5px 5px 12px #000;}
+#featured-selection video{position: absolute; top: 0; left: 0; width: 100%; height: auto; z-index: 1;}
+.homepage main{width: 100%; max-width: 100%; padding-bottom: 100px;} */
+
+
 
 .profile-pic {display: block; width: 150px; height: 150px; border: 5px solid #808080; transition: .25s ease-in-out;}
 
@@ -129,7 +159,7 @@ a.profiles-button:hover {will-change: transform; transition: .25s ease-in-out; b
 
 .profile-container:hover .profile-pic{border-color: white;}
 
-.featured-section-content{position: relative;}
+
 
 .new-release-container h2 .my-list-container h2 .trending h2{display: flex; text-align: left; font-family: 'pier_sansmedium'; font-size: 21px; font-weight: 400; line-height: 21px; padding-bottom: 10px;}
 .new-release-container .my-list-container .trending-container{width: 100%; flex-direction: row; align-items: flex-end; padding-left: 15px}
@@ -148,6 +178,3 @@ a.profiles-button:hover {will-change: transform; transition: .25s ease-in-out; b
 .netflix-original-item:first-of-type:hover {transform-origin: center left;}
 .netflix-original-item:last-of-type:hover {transform-origin: center right;}
 
-.playButton{align-items: center;}
-
-.featured-action-buttons{display: flex; align-items: center;}
